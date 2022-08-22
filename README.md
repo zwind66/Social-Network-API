@@ -4,7 +4,7 @@
 
 ###  Github url : <https://github.com/zwind66/Social-Network-API>
 
-### link to the video : [Screencastify](https://drive.google.com/file/d/1oi_GxWCvfIKpnQhdlFq5aZu1uVsNShr3/view)
+### link to the video : [Screencastify](https://drive.google.com/file/d/1AvRkWTzsFHqImwzIIcE0pVEHfuPFFgg2/view)
 
 ## Description
 
@@ -54,7 +54,7 @@ The user should clone the repository from GitHub and download Node. This applica
 
 `npm start`
 
-* To see more details: [Screencastify](https://drive.google.com/file/d/1oi_GxWCvfIKpnQhdlFq5aZu1uVsNShr3/view)
+* To see more details: [Screencastify](https://drive.google.com/file/d/1AvRkWTzsFHqImwzIIcE0pVEHfuPFFgg2/view)
 
 
 ## License
