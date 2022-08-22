@@ -1,3 +1,4 @@
+// requiremnts
 const { User, Thought } = require("../models");
 
 module.exports = {
@@ -7,6 +8,7 @@ module.exports = {
       .then((user) => res.json(user))
       .catch((err) => res.status(500).json(err));
   },
+
   //Get single user
   getSingleUser(req, res) {
     User.findOne({ _id: req.params.userId })
@@ -20,6 +22,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
   //create a user
   createUser(req, res) {
     User.create(req.body)
@@ -29,6 +32,7 @@ module.exports = {
         return res.status(500).json(err);
       });
   },
+
   //update a user
   updateUser(req, res) {
     User.findOneAndUpdate(
@@ -43,8 +47,8 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
   //delete a user
-  //BONUS: Remove a user's associated thoughts when deleted.
   deleteUser(req, res) {
     User.findOneAndDelete({ _id: req.params.userId })
       .then((user) =>
@@ -55,6 +59,7 @@ module.exports = {
       .then(() => res.json({ message: "User and Thought deleted!" }))
       .catch((err) => res.status(500).json(err));
   },
+
   //add a friend
   addFriend(req, res) {
     User.findOneAndUpdate(
@@ -69,6 +74,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
   //delete a friend
   deleteFriend(req, res) {
     User.findOneAndUpdate(

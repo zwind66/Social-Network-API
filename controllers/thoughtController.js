@@ -1,3 +1,4 @@
+// Requirements
 const { User, Thought } = require("../models");
 
 module.exports = {
@@ -18,7 +19,8 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
-  //create a thought and push the created thought's _id to the associated user's thoughts array field
+
+  // create a thought 
   createThought(req, res) {
     Thought.create(req.body)
       .then(({ _id }) => {
@@ -35,6 +37,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
   //update a thought
   updateThought(req, res) {
     Thought.findOneAndUpdate(
@@ -49,6 +52,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
   //delete a thought
   deleteThought(req, res) {
     Thought.findOneAndDelete({ _id: req.params.thoughtId })
@@ -56,18 +60,19 @@ module.exports = {
         !thought
           ? res.status(404).json({ message: "No thought find with this ID!" })
           : User.findOneAndUpdate(
-              { thoughts: req.params.thoughtId },
-              { $pull: { thoughts: req.params.thoughtId } },
-              { new: true }
-            )
+            { thoughts: req.params.thoughtId },
+            { $pull: { thoughts: req.params.thoughtId } },
+            { new: true }
+          )
       )
       .then((user) =>
         !user
-          ? res.status(404).json({ message: 'Thought deleted, but no user found'})
+          ? res.status(404).json({ message: 'Thought deleted, but no user found' })
           : res.json({ message: 'Thought successfully deleted' })
       )
       .catch((err) => res.status(500).json(err));
   },
+
   //create reaction
   createReaction(req, res) {
     Thought.findOneAndUpdate(
@@ -82,6 +87,7 @@ module.exports = {
       )
       .catch((err) => res.status(500).json(err));
   },
+
   //delete reaction
   deleteReaction(req, res) {
     Thought.findOneAndUpdate(
