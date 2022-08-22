@@ -1,4 +1,4 @@
-// Set requirements for the app:
+// Set requirements 
 const router = require('express').Router();
 const apiRoutes = require('./api');
 

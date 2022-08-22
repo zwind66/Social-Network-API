@@ -12,8 +12,9 @@ app.use(express.static('public'));
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network-api', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false,
-});
+}, err => {
+  if(err) throw err;
+  console.log('Connected to MongoDB!!!')});
 
 // Use this to log mongo queries being executed!
 mongoose.set('debug', true);
