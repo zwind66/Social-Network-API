@@ -1,0 +1,25 @@
+{
+  "name": "social-network-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zwind66/Social-Network-API.git"
+  },
+  "author": "Joseph DeWoody",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zwind66/Social-Network-API/issues"
+  },
+  "homepage": "https://github.com/zwind66/Social-Network-API#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "moment": "^2.29.3",
+    "mongoose": "^6.3.4",
+  }
+}
